@@ -1,0 +1,27 @@
+<div class="new-container">	
+	<div class="new-title">
+		<h1>Add a new book</h1>
+	</div>
+	<div class="new-form">
+		<%= form_for @book do |f| %>
+			<p>
+				<span>TITLE</span>
+				<%= f.text_field :title, class: "form-box" %>
+			</p>
+			<p>
+				<span>PRICE</span>
+				<%= f.text_field :price, class: "form-box" %>
+			</p>
+			<p>
+				<span>DESCRIPTION</span>
+				<%= f.text_area :description, class: "form-box" %>
+			</p>
+			<p>
+				<span>RATING</span>
+				<%= f.text_field :rate, class: "form-box" %>
+			</p>
+			<%= f.submit "ADD", class: "btn" %>
+		<% end %>
+	</div>
+</div>
+

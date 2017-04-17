@@ -1,0 +1,19 @@
+<div class="list-container">
+	<h1>Book List</h1>
+	<div class="list-box">
+		<% @books.each do |book| %>
+			<p>
+				TITLE : <span><%= link_to book.title, book_path(book.id) %></span>
+			</p>
+			<p>
+				PRICE : <span><%= book.price %></span>
+			</p>
+			<p>
+				DESCRIPTION : <span><%= book.description %></span>
+			</p>
+			<p>
+				RATING : <span><%= book.rate %></span>
+			</p>
+		<% end %>
+	</div>
+</div>

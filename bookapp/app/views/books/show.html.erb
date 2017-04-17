@@ -1,0 +1,31 @@
+<div class="detail">
+	<h1><%= @book.title %></h1>
+	<h3>PRICE : </h3>
+	<p><%= @book.price %></p>
+	<h3>DESCRIPTION : </h3>
+	<p><%= @book.description %></p>
+	<h3>RATING : </h3>
+	<p><%= @book.rate %></p>
+</div>
+<div class="review">
+	<h1>Review</h1>
+	<% @book.comments.each do |comment| %>
+		<p>
+			NAME : <span><%= comment.nickname %></span>
+		</p>
+		<p>
+			COMMENT : <span><%= comment.comment %></span>
+		</p>
+	<% end %>
+</div>
+<div class="review">
+	<h1>Write a review</h1>
+	<%= form_for @comment do |f| %>
+		<%= f.hidden_field :book_id, value: @book.id %>
+		<h3>Your Name</h3>
+		<%= f.text_field :nickname, class: "form-box" %>
+		<h3>Your Review</h3>
+		<%= f.text_area :comment, class: "form-box" %>
+		<%= f.submit "SUBMIT", class: "btn" %>
+	<% end %>
+</div>
